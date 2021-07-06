@@ -8,6 +8,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class User {
 
+
     @Id
     @GeneratedValue
     private long id;
