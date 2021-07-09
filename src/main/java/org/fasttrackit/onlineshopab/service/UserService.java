@@ -1,12 +1,15 @@
 package org.fasttrackit.onlineshopab.service;
 
 import org.fasttrackit.onlineshopab.domain.User;
+import org.fasttrackit.onlineshopab.exception.ResourceNotFoundException;
 import org.fasttrackit.onlineshopab.persistence.UserRepository;
 import org.fasttrackit.onlineshopab.transfer.SaveUserRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -28,5 +31,12 @@ public class UserService {
         user.setLastName(request.getLastName());
 
         return userRepository.save(user);
+    }
+
+    public User getUser(long id) {
+        LOGGER.info("Retrieving user {}", id);
+
+        return userRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("User " + id + " does not exist"));
     }
 }
