@@ -64,9 +64,49 @@ public class UserServiceIntegrationTests {
     @Test
     public void getUser_whenNonExistingUser_thenThrowResourceNotFoundException() {
         Assertions.assertThrows(ResourceNotFoundException.class, () -> userService.getUser(99999));
+    }
 
+    @Test
+    public void updateUser_whenValidRequest_thenReturnUpdatedUser() {
+        User createdUser = createUser();
+
+        SaveUserRequest request = new SaveUserRequest();
+        request.setFirstName(createdUser.getFirstName() + " Updated");
+        request.setLastName(createdUser.getLastName() + " Updated");
+
+        User updatedUser = userService.updateUser(createdUser.getId(), request);
+
+        assertThat(updatedUser, notNullValue());
+        assertThat(updatedUser.getId(), is(createdUser.getId()));
+        assertThat(updatedUser.getFirstName(), is(request.getFirstName()));
+        assertThat(updatedUser.getLastName(), is(request.getLastName()));
 
     }
+
+    @Test
+    public void updateUser_whenNonExistingUser_thenThrowResourceNotFoundException() {
+        User createdUser = createUser();
+
+        SaveUserRequest request = new SaveUserRequest();
+        request.setFirstName(createdUser.getFirstName() + " Updated");
+        request.setLastName(createdUser.getLastName() + " Updated");
+
+        User updatedUser = userService.updateUser(createdUser.getId(), request);
+
+        Assertions.assertThrows(ResourceNotFoundException.class,
+                () -> userService.updateUser(9999, request));
+    }
+
+    @Test
+    public void deleteUser_whenExistingUser_thenTheUserIsDeleted() {
+        User createdUser = createUser();
+        userService.deleteUser(createdUser.getId());
+
+        Assertions.assertThrows(ResourceNotFoundException.class,
+                () -> userService.getUser(createdUser.getId()));
+
+    }
+
 
     private User createUser() {
         SaveUserRequest request = new SaveUserRequest();
@@ -82,4 +122,6 @@ public class UserServiceIntegrationTests {
 
         return user;
     }
+    
+
 }
