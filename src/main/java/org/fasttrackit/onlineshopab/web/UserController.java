@@ -43,7 +43,6 @@ public class UserController {
     public ResponseEntity<Page<User>> getUsers(GetUsersRequest request, Pageable pageable) {
         Page<User> users = userService.getUsers(request, pageable);
         return ResponseEntity.ok(users);
-
     }
 
     @PutMapping("/{id}")
