@@ -3,17 +3,14 @@ package org.fasttrackit.onlineshopab.service;
 import org.fasttrackit.onlineshopab.domain.User;
 import org.fasttrackit.onlineshopab.exception.ResourceNotFoundException;
 import org.fasttrackit.onlineshopab.persistence.UserRepository;
-import org.fasttrackit.onlineshopab.transfer.GetUsersRequest;
-import org.fasttrackit.onlineshopab.transfer.SaveUserRequest;
+import org.fasttrackit.onlineshopab.transfer.user.GetUsersRequest;
+import org.fasttrackit.onlineshopab.transfer.user.SaveUserRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 public class UserService {

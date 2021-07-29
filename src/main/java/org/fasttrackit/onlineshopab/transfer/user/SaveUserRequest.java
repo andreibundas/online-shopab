@@ -1,4 +1,4 @@
-package org.fasttrackit.onlineshopab.transfer;
+package org.fasttrackit.onlineshopab.transfer.user;
 
 import javax.validation.constraints.NotNull;
 

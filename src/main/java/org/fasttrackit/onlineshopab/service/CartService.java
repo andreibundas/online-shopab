@@ -4,7 +4,7 @@ import org.fasttrackit.onlineshopab.domain.Cart;
 import org.fasttrackit.onlineshopab.domain.User;
 import org.fasttrackit.onlineshopab.exception.ResourceNotFoundException;
 import org.fasttrackit.onlineshopab.persistence.CartRepository;
-import org.fasttrackit.onlineshopab.transfer.AddProductToCartRequest;
+import org.fasttrackit.onlineshopab.transfer.cart.AddProductToCartRequest;
 import org.fasttrackit.onlineshopab.transfer.cart.CartResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,7 +28,7 @@ public class CartService {
     }
 
     @Transactional
-    public Cart addProductToCart(AddProductToCartRequest request) {
+    public void addProductToCart(AddProductToCartRequest request) {
         LOGGER.info("Adding product to cart: {}", request);
 
         Cart cart = cartRepository.findById(request.getUserId())
@@ -39,7 +39,7 @@ public class CartService {
             cart.setUser(user);
         }
 
-        return cartRepository.save(cart);
+        cartRepository.save(cart);
     }
 
     @Transactional
