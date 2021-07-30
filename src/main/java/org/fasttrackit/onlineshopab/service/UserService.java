@@ -25,7 +25,6 @@ public class UserService {
     }
 
     public User createUser(SaveUserRequest request) {
-//        LOGGER.info("Creating user " + request);
         LOGGER.info("Creating user {}", request);
         User user = new User();
         user.setFirstName(request.getFirstName());
