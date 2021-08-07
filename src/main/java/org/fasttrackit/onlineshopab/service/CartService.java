@@ -33,6 +33,7 @@ public class CartService {
         this.productService = productService;
     }
 
+
     @Transactional
     public void addProductToCart(AddProductToCartRequest request) {
         LOGGER.info("Adding product to cart: {}", request);
@@ -58,6 +59,7 @@ public class CartService {
 
        Cart cart = cartRepository.findById(userId)
                .orElseThrow(() -> new ResourceNotFoundException("Cart " + userId + " does not exist"));
+
 
        CartResponse cartResponse = new CartResponse();
        cartResponse.setId(cart.getId());

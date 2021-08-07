@@ -71,6 +71,5 @@ public class UserService {
         LOGGER.info("Deleting user {}", id);
 
         userRepository.deleteById(id);
-
     }
 }
