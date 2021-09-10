@@ -86,7 +86,6 @@ public class ProductService {
     public Product updateProduct(long id, SaveProductRequest request) {
         LOGGER.info("Updating product {}: {}", id, request);
 
-
         Product existingProduct = getProduct(id);
 
         existingProduct.setName(request.getName());

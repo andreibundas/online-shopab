@@ -1,7 +1,5 @@
 package org.fasttrackit.onlineshopab.transfer.product;
 
-import javax.validation.constraints.NotNull;
-
 public class ProductResponse {
 
     private Long id;

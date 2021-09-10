@@ -1,6 +1,5 @@
 package org.fasttrackit.onlineshopab.web;
 
-import org.fasttrackit.onlineshopab.domain.Cart;
 import org.fasttrackit.onlineshopab.service.CartService;
 import org.fasttrackit.onlineshopab.transfer.cart.AddProductToCartRequest;
 import org.fasttrackit.onlineshopab.transfer.cart.CartResponse;

@@ -1,10 +1,9 @@
-package org.fasttrackit.onlineshopab.steps;
+package org.fasttrackit.onlineshopab.integrationtests.steps;
 
 import org.fasttrackit.onlineshopab.domain.User;
 import org.fasttrackit.onlineshopab.service.UserService;
 import org.fasttrackit.onlineshopab.transfer.user.SaveUserRequest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.stereotype.Component;
 
 import static org.hamcrest.CoreMatchers.is;

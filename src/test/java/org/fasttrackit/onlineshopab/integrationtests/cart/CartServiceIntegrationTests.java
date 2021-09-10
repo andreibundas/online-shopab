@@ -1,9 +1,9 @@
-package org.fasttrackit.onlineshopab.cart;
+package org.fasttrackit.onlineshopab.integrationtests.cart;
 
 import org.fasttrackit.onlineshopab.domain.User;
+import org.fasttrackit.onlineshopab.integrationtests.steps.ProductTestSteps;
+import org.fasttrackit.onlineshopab.integrationtests.steps.UserTestSteps;
 import org.fasttrackit.onlineshopab.service.CartService;
-import org.fasttrackit.onlineshopab.steps.ProductTestSteps;
-import org.fasttrackit.onlineshopab.steps.UserTestSteps;
 import org.fasttrackit.onlineshopab.transfer.cart.AddProductToCartRequest;
 import org.fasttrackit.onlineshopab.transfer.cart.CartResponse;
 import org.fasttrackit.onlineshopab.transfer.cart.ProductInCart;

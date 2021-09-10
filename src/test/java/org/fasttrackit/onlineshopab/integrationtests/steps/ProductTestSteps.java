@@ -1,18 +1,13 @@
-package org.fasttrackit.onlineshopab.steps;
+package org.fasttrackit.onlineshopab.integrationtests.steps;
 
-import org.fasttrackit.onlineshopab.domain.Product;
-import org.fasttrackit.onlineshopab.domain.User;
 import org.fasttrackit.onlineshopab.service.ProductService;
-import org.fasttrackit.onlineshopab.service.UserService;
 import org.fasttrackit.onlineshopab.transfer.product.ProductResponse;
 import org.fasttrackit.onlineshopab.transfer.product.SaveProductRequest;
-import org.fasttrackit.onlineshopab.transfer.user.SaveUserRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.validation.constraints.NotNull;
-
-import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.greaterThan;
 

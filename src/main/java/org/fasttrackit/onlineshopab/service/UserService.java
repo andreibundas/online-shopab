@@ -62,7 +62,6 @@ public class UserService {
         existingUser.setFirstName(request.getFirstName());
         existingUser.setLastName(request.getLastName());
 
-//        BeanUtils.copyProperties(request,existingUser);
 
         return userRepository.save(existingUser);
     }
